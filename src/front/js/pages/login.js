@@ -1,17 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  function HandelSubmit(e) {
+    e.preventDefault();
+  }
   return (
-    <div className="text-center mt-5">
+    <form className="text-center mt-5">
       <h1>Login</h1>
-      <input type="text" />
-      <input type="password" />
-      <button>Loggin</button>
-    </div>
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Login</button>
+    </form>
   );
 };

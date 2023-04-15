@@ -10,6 +10,8 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
+import Signup from "./pages/Signup";
+import Private from "./pages/Private";
 
 //create your first component
 const Layout = () => {
@@ -22,23 +24,12 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/demo">
-              <Demo />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/sinle/:theid">
-              <Single />
-              <Route>
-                <h1>Not found!</h1>
-              </Route>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/login" element={<Login />}></Route>
+            <Route exact path="/signup" element={<Signup />}></Route>
+            <Route exact path="/private" element={<Private />}></Route>
+          </Routes>
         </ScrollToTop>
       </BrowserRouter>
     </div>
