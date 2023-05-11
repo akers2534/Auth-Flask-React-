@@ -8,7 +8,7 @@ const Signup = () => {
   function HandelSubmit(e) {
     e.preventDefault();
     fetch(
-      "https://3001-akers2534-authflaskreac-teu0acz5vwx.ws-us94.gitpod.io/api/signup",
+      "https://3001-akers2534-authflaskreac-7a016vk2oii.ws-us97.gitpod.io/api/signup",
       {
         method: "POST",
         headers: {
